@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { API } from "./global";
 import { Link } from "react-router-dom";
-import { style } from "@mui/system";
+import "./App.css";
 
-export function Scrapeddata() {
+export function Watch() {
   const [data, setdata] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
-    fetch(`${API}/scrapdata/gadget`)
+    fetch(`${API}/scrapdata/watch`)
       .then((data) => data.json())
       .then((data) => setdata(data));
   }, []);
@@ -69,36 +69,21 @@ export function Scrapeddata() {
                     Button
                   </button>
                 </div>
-                {/* 
-            
-                <input
-                  className="form-contro p-2 no-rounded custom-width"
-                  type="text"
-                  placeholder="Search"
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                  }}
-                  aria-label="Search"
-                />
-                <button className="btn no-rou btn-warning" type="button">
-                  Search
-                </button> */}
               </span>
             </div>
             <ul className="navbar-nav text-center ms-auto  ">
               <li className="nav-item active ">
-                <Link to={"/gadget"} className="nav-link active">
+                <Link to={"/gadget"} className="nav-link">
                   Gadget
                 </Link>
               </li>
               <li className="nav-item  ">
-                <Link to={"/watch"} className="nav-link">
+                <Link to={""} className="nav-link">
                   Cloths
                 </Link>
               </li>
               <li className="nav-item ">
-                <Link to={"/watch"} className="nav-link">
+                <Link to={"/watch"} className="nav-link active">
                   Watch
                 </Link>{" "}
               </li>

@@ -4,3 +4,42 @@ padding: 0;
 
 
 }
+
+.card-img-top{
+object-fit: contain;
+
+}
+
+.page-link{
+    cursor: pointer;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
+
+.custom-width{
+    width: 350px;
+}
+
+.no-rounded {
+    border-radius: 0; /* Set border-radius to 0 to remove rounded corners */
+  }
+
+  .btn-rou{
+
+border-radius: none
+
+}
+
+
+
+.footer-el{
+
+position: relative;
+top: 25px;
+
+
+}
