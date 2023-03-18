@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { API } from "./global";
 import { Link } from "react-router-dom";
-import "./App.css";
 
-export function Watch() {
+export function Gadget() {
   const [data, setdata] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(() => {
-    fetch(`${API}/scrapdata/watch`)
+    fetch(`${API}/scrapdata/gadget`)
       .then((data) => data.json())
       .then((data) => setdata(data));
   }, []);
@@ -73,7 +73,7 @@ export function Watch() {
             </div>
             <ul className="navbar-nav text-center ms-auto  ">
               <li className="nav-item active ">
-                <Link to={"/gadget"} className="nav-link">
+                <Link to={"/gadget"} className="nav-link active">
                   Gadget
                 </Link>
               </li>
@@ -83,7 +83,7 @@ export function Watch() {
                 </Link>
               </li>
               <li className="nav-item ">
-                <Link to={"/watch"} className="nav-link active">
+                <Link to={"/watch"} className="nav-link">
                   Watch
                 </Link>{" "}
               </li>

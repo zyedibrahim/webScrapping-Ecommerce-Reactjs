@@ -5,11 +5,19 @@ import { style } from "@mui/system";
 
 export function Scrapeddata() {
   const [data, setdata] = useState([]);
+  const [clothsdata, setclothsdata] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [Price, setPrice] = useState();
+
   useEffect(() => {
-    fetch(`${API}/scrapdata/gadget`)
+    fetch(`${API}/scrapdata`)
       .then((data) => data.json())
       .then((data) => setdata(data));
+  }, []);
+  useEffect(() => {
+    fetch(`${API}/scrapdata/cloths`)
+      .then((data) => data.json())
+      .then((data) => setclothsdata(data));
   }, []);
 
   const sizecard = {
@@ -31,11 +39,13 @@ export function Scrapeddata() {
     pages.push(i);
   }
 
+  const slicedata = clothsdata.slice(0, 2);
+
   return (
     <div>
       <nav className=" navbar navbar-expand-md bg-dark navbar-dark">
         <div className="container">
-          <Link to={"/students"} className=" text-white navbar-brand ms-5">
+          <Link to={"/"} className=" text-white navbar-brand ms-5">
             Amaikart
           </Link>
 
@@ -69,21 +79,6 @@ export function Scrapeddata() {
                     Button
                   </button>
                 </div>
-                {/* 
-            
-                <input
-                  className="form-contro p-2 no-rounded custom-width"
-                  type="text"
-                  placeholder="Search"
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                  }}
-                  aria-label="Search"
-                />
-                <button className="btn no-rou btn-warning" type="button">
-                  Search
-                </button> */}
               </span>
             </div>
             <ul className="navbar-nav text-center ms-auto  ">
@@ -93,7 +88,7 @@ export function Scrapeddata() {
                 </Link>
               </li>
               <li className="nav-item  ">
-                <Link to={"/watch"} className="nav-link">
+                <Link to={"/cloths"} className="nav-link">
                   Cloths
                 </Link>
               </li>
@@ -106,70 +101,62 @@ export function Scrapeddata() {
           </div>
         </div>
       </nav>
-      <div className="row m-2">
-        <div className="col-md-3"></div>
-        <div className="col-md-9">
-          <div className="row mt-3 ">
-            {currentpost
-              ?.filter((item) => {
-                return searchQuery.toLowerCase() === ""
-                  ? item
-                  : item.title.toLowerCase().includes(searchQuery);
-              })
-              ?.map((ele) => {
-                return (
-                  <div key={ele._id} className="col-3">
-                    <div className="card  h-100">
-                      <img
-                        src={ele.image}
-                        alt={ele.title}
-                        style={sizecard}
-                        className="card-img-top"
-                      />
-                      <div className="card-body">
-                        <div className="card-titlt">
-                          {ele.title.length < 50 ? ele.title.slice(0, 50) : ""}
-                        </div>
-                        <div className="card-text">{ele.rating}</div>
-                        <div className="card-text">
-                          {ele.price}{" "}
-                          <span className="text-muted">{ele.offer}</span>{" "}
-                        </div>
-                      </div>
-                      <div className="card-footer border-0 bg-white mt-1 mb-1">
-                        <div className="d-grid">
-                          <button className="btn mb-1 btn-warning">
-                            AddCart
-                          </button>
-                          <button className="btn btn-warning">Buy</button>
-                        </div>
-                      </div>
+      <div className="row mt-3  ms-2 me-2">
+        {currentpost
+          ?.filter((item) => {
+            return searchQuery.toLowerCase() === ""
+              ? item
+              : item.title.toLowerCase().includes(searchQuery);
+          })
+          ?.map((ele) => {
+            return (
+              <div key={ele._id} className="col-6 col-md-3 col-lg-3 col-xlg-3">
+                <div className="card  h-100">
+                  <img
+                    src={ele.image}
+                    alt={ele.title}
+                    style={sizecard}
+                    className="card-img-top"
+                  />
+                  <div className="card-body">
+                    <div className="card-titlt">{ele.title}</div>
+                    <div className="card-text">rating : {ele.rating}</div>
+                    <div className="card-text">
+                      {ele.price}{" "}
+                      <span className="ms-2 text-muted">{ele.offer}</span>{" "}
                     </div>
                   </div>
+                  <div className="card-footer border-0 bg-white mt-1 mb-1">
+                    <div className="d-grid">
+                      <button className="btn mb-1 btn-warning">AddCart</button>
+                      <button className="btn btn-warning">Buy</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+
+        {/* pagination */}
+        <div className="mt-3 d-flex justify-content-center">
+          <nav aria-label="...">
+            <ul className="pagination">
+              {pages.map((page, index) => {
+                return (
+                  <li key={index} className="page-item">
+                    <span
+                      className={`page-link ${
+                        page == currentpage ? "active" : ""
+                      }`}
+                      onClick={() => setcurrentpage(page)}
+                    >
+                      {page}
+                    </span>
+                  </li>
                 );
               })}
-          </div>
-          {/* pagination */}
-          <div className="mt-3 d-flex justify-content-center">
-            <nav aria-label="...">
-              <ul className="pagination">
-                {pages.map((page, index) => {
-                  return (
-                    <li key={index} className="page-item">
-                      <span
-                        className={`page-link ${
-                          page == currentpage ? "active" : ""
-                        }`}
-                        onClick={() => setcurrentpage(page)}
-                      >
-                        {page}
-                      </span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-          </div>
+            </ul>
+          </nav>
         </div>
       </div>
     </div>

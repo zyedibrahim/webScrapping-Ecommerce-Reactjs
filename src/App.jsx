@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
+import { Cloths } from "./Cloths";
+import { Gadget } from "./Gadget";
 import { Navbar } from "./Navbar";
 import { Scrapeddata } from "./Scrapeddata";
 import { Watch } from "./Watch";
@@ -14,8 +16,9 @@ function App() {
       {/* <Navbar />; */}
       <Routes>
         <Route path="/" element={<Scrapeddata />} />
-        <Route path="/gadget" element={<Scrapeddata />} />
+        <Route path="/gadget" element={<Gadget />} />
         <Route path="/watch" element={<Watch />} />
+        <Route path="/cloths" element={<Cloths />} />
       </Routes>
       <Footer />
     </div>

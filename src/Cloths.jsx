@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
-import { API } from "./global";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./App.css";
+import { API } from "./global";
+API;
 
-export function Watch() {
+export function Cloths() {
   const [data, setdata] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [Price, setPrice] = useState();
+
   useEffect(() => {
-    fetch(`${API}/scrapdata/watch`)
+    fetch(`${API}/scrapdata/cloths`)
       .then((data) => data.json())
       .then((data) => setdata(data));
   }, []);
@@ -73,17 +75,17 @@ export function Watch() {
             </div>
             <ul className="navbar-nav text-center ms-auto  ">
               <li className="nav-item active ">
-                <Link to={"/gadget"} className="nav-link">
+                <Link to={"/gadget"} className="nav-link ">
                   Gadget
                 </Link>
               </li>
               <li className="nav-item  ">
-                <Link to={"/cloths"} className="nav-link">
+                <Link to={"/cloths"} className="nav-link active ">
                   Cloths
                 </Link>
               </li>
               <li className="nav-item ">
-                <Link to={"/watch"} className="nav-link active">
+                <Link to={"/watch"} className="nav-link">
                   Watch
                 </Link>{" "}
               </li>
