@@ -36,6 +36,7 @@ export function Watch() {
       <nav className=" navbar navbar-expand-md bg-dark navbar-dark">
         <div className="container">
           <Link to={"/"} className=" text-white navbar-brand ms-5">
+            <i className="me-2 fa-brands fa-shopify"></i>
             Amaikart
           </Link>
 
@@ -62,11 +63,11 @@ export function Watch() {
                     aria-label="Search"
                   />
                   <button
-                    className="btn btn-warning"
+                    className="search-btn"
                     type="button"
                     id="button-addon2"
                   >
-                    Button
+                    <i className="fa-solid fa-magnifying-glass"></i>
                   </button>
                 </div>
               </span>

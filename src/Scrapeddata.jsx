@@ -41,11 +41,16 @@ export function Scrapeddata() {
 
   const slicedata = clothsdata.slice(0, 2);
 
+  const color = {
+    color: "#ff9742",
+  };
+
   return (
     <div>
       <nav className=" navbar navbar-expand-md bg-dark navbar-dark">
         <div className="container">
           <Link to={"/"} className=" text-white navbar-brand ms-5">
+            <i className="me-2 fa-brands fa-shopify" style={color}></i>
             Amaikart
           </Link>
 
@@ -72,11 +77,11 @@ export function Scrapeddata() {
                     aria-label="Search"
                   />
                   <button
-                    className="btn btn-warning"
+                    className="search-btn"
                     type="button"
                     id="button-addon2"
                   >
-                    Button
+                    <i className="fa-solid fa-magnifying-glass"></i>
                   </button>
                 </div>
               </span>
@@ -101,6 +106,88 @@ export function Scrapeddata() {
           </div>
         </div>
       </nav>
+
+      <div className="row">
+        <div className="col">
+          <div
+            id="carouselExampleIndicators"
+            className="carousel slide"
+            data-bs-ride="true"
+          >
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img
+                  src="https://wallpaperaccess.com/full/1448061.jpg"
+                  className="d-block w-100"
+                  alt="img1"
+                />
+              </div>
+              <div className="carousel-item">
+                <img
+                  src="https://wallpaperaccess.com/full/1448077.jpg"
+                  className="d-block w-100"
+                  alt="img2"
+                />
+              </div>
+
+              <div className="carousel-item">
+                <img
+                  src="https://wallpaperaccess.com/full/1448102.jpg"
+                  className="d-block w-100"
+                  alt="img3"
+                />
+              </div>
+            </div>
+            <button
+              className="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div className="row mt-3  ms-2 me-2">
         {currentpost
           ?.filter((item) => {
@@ -138,7 +225,7 @@ export function Scrapeddata() {
           })}
 
         {/* pagination */}
-        <div className="mt-3 d-flex justify-content-center">
+        <div className="mt-3 d-flex flex-wrap justify-content-center">
           <nav aria-label="...">
             <ul className="pagination">
               {pages.map((page, index) => {

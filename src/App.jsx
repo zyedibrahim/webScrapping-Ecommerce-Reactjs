@@ -146,8 +146,8 @@ function Footer() {
           // style="background-color: rgba(0, 0, 0, 0.025);"
         >
           © 2021 Copyright:
-          <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-            MDBootstrap.com
+          <a className="text-reset fw-bold" href="/">
+            Amaikart.com
           </a>
         </div>
       </footer>

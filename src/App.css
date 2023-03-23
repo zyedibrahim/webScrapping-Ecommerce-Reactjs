@@ -47,3 +47,30 @@ top: 200px;
 .offer-heading{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.search-btn{
+
+    background-color: orange;
+    padding: 5px 30px;
+border-left: none;
+
+
+
+}
+/* .carousel-item{
+    height: 500px;
+} */
+
+img{
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+
+
+
+
+
+
+
