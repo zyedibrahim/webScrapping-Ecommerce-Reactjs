@@ -197,7 +197,7 @@ export function Scrapeddata() {
           })
           ?.map((ele) => {
             return (
-              <div key={ele._id} className="col-6 col-md-3 col-lg-3 col-xlg-3">
+              <div key={ele._id} className="col-12 col-md-3 col-lg-3 col-xlg-3">
                 <div className="card  h-100">
                   <img
                     src={ele.image}
