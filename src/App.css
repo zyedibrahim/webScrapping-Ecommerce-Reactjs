@@ -68,8 +68,28 @@ img{
     background-attachment: fixed;
 }
 
+@media only screen and (max-width: 600px) {
+    .search-btn{
 
+        background-color: orange;
+        padding: 3px 20px;
+    border-left: none;
+    
+    }
 
+    
+.custom-width{
+    width: 250px;
+}
+.input-group{
+
+    margin-left: 75px;
+}
+input{
+    border-bottom: none;
+}
+
+  }
 
 
 

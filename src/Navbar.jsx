@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Navbar() {
   return (
-    <nav className=" navbar navbar-expand-md bg-dark navbar-dark">
+    <nav className=" navbar navbar-expand-lg bg-dark navbar-dark">
       <div className="container">
         <Link to={"/students"} className=" text-white navbar-brand">
           <i className="me-2 fa-solid fa-graduation-cap"></i>

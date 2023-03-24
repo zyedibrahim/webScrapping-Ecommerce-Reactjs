@@ -47,7 +47,7 @@ export function Scrapeddata() {
 
   return (
     <div>
-      <nav className=" navbar navbar-expand-md bg-dark navbar-dark">
+      <nav className=" navbar navbar-expand-lg bg-dark navbar-dark">
         <div className="container">
           <Link to={"/"} className=" text-white navbar-brand ms-5">
             <i className="me-2 fa-brands fa-shopify" style={color}></i>
