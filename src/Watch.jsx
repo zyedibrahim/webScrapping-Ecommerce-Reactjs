@@ -77,7 +77,7 @@ export function Watch() {
               </span>
             </div>
             <ul className="navbar-nav text-center ms-auto  ">
-            <li className="nav-item">
+              <li className="nav-item">
                 <Link to={"/"} className="nav-link ">
                   Home
                 </Link>
@@ -110,7 +110,7 @@ export function Watch() {
           })
           ?.map((ele) => {
             return (
-              <div key={ele._id} className="col-6 col-md-3 col-lg-3 col-xlg-3">
+              <div key={ele._id} className="col-12 col-md-3 col-lg-3 col-xlg-3">
                 <div className="card  h-100">
                   <img
                     src={ele.image}
