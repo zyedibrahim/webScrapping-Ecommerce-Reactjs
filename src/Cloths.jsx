@@ -32,13 +32,16 @@ export function Cloths() {
   for (let i = 1; i < Math.ceil(totalpost / postperpage); i++) {
     pages.push(i);
   }
+  const color = {
+    color: "#ff9742",
+  };
 
   return (
     <div>
       <nav className=" navbar navbar-expand-md bg-dark navbar-dark">
         <div className="container">
           <Link to={"/"} className=" text-white navbar-brand ms-5">
-            <i className="me-2 fa-brands fa-shopify"></i>
+            <i style={color} className="me-2 fa-brands fa-shopify"></i>
             Amaikart
           </Link>
 
@@ -69,12 +72,17 @@ export function Cloths() {
                     type="button"
                     id="button-addon2"
                   >
-                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                   </button>
                 </div>
               </span>
             </div>
             <ul className="navbar-nav text-center ms-auto  ">
+              <li className="nav-item">
+                <Link to={"/"} className="nav-link ">
+                  Home
+                </Link>
+              </li>
               <li className="nav-item active ">
                 <Link to={"/gadget"} className="nav-link ">
                   Gadget

@@ -88,7 +88,12 @@ export function Scrapeddata() {
             </div>
             <ul className="navbar-nav text-center ms-auto  ">
               <li className="nav-item active ">
-                <Link to={"/gadget"} className="nav-link active">
+                <Link to={"/"} className="nav-link ">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to={"/gadget"} className="nav-link">
                   Gadget
                 </Link>
               </li>
@@ -188,7 +193,7 @@ export function Scrapeddata() {
         </div>
       </div>
 
-      <div className="row mt-3  ms-2 me-2">
+      <div className="row flex-wrap mt-3 d-flex justify-content-center flex-direction-column ms-2 me-2">
         {currentpost
           ?.filter((item) => {
             return searchQuery.toLowerCase() === ""
@@ -223,29 +228,26 @@ export function Scrapeddata() {
               </div>
             );
           })}
-
-        {/* pagination */}
-        <div className="mt-3 d-flex flex-wrap justify-content-center">
-          <nav aria-label="...">
-            <ul className="pagination">
-              {pages.map((page, index) => {
-                return (
-                  <li key={index} className="page-item">
-                    <span
-                      className={`page-link ${
-                        page == currentpage ? "active" : ""
-                      }`}
-                      onClick={() => setcurrentpage(page)}
-                    >
-                      {page}
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+        <div className="col-12 mt-3 d-flex flex-wrap justify-content-center">
+          <ul className="pagination">
+            {pages.map((page, index) => {
+              return (
+                <li key={index} className="page-item">
+                  <span
+                    className={`page-link ${
+                      page == currentpage ? "active" : ""
+                    }`}
+                    onClick={() => setcurrentpage(page)}
+                  >
+                    {page}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
+      {/* pagination */}
     </div>
   );
 }
