@@ -90,8 +90,37 @@ input{
 }
 
   }
+@media only screen and (max-width: 300px) {
+    .search-btn{
 
+        background-color: orange;
+        padding: 3px 20px;
+    border-left: none;
+    
+    }
 
+    
+.custom-width{
+    width: 150px;
+}
+.input-group{
 
+    margin-left: 60px;
+}
+input{
+    border-bottom: none;
+}
+
+  }
+
+.navbar{
+    position: sticky;
+    z-index: 1;
+    top: 0;
+     
+}
+.carousel{
+    z-index: -1;
+}
 
 
